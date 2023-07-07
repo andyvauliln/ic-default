@@ -4,6 +4,7 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
+    // "checkJs": false,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
@@ -14,14 +15,45 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "noUncheckedIndexedAccess": true
+    "noUncheckedIndexedAccess": true,
+    "baseUrl": ".",
+    "paths": {
+      "react": ["./node_modules/@types/react"],
+      "@/*": ["./*"]
+    },
   },
   "include": [
     "next-env.d.ts",
-    "next-auth.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "**/*.js"
   ],
   "exclude": ["node_modules"]
+//"target": Specifies the ECMAScript version to which the TypeScript code will be compiled. In this case, it is set to "es5", meaning the code will be transpiled to ECMAScript 5 syntax.
+// "lib": Defines the library files that are available to the TypeScript compiler. It includes the "dom", "dom.iterable", and "esnext" libraries in this case.
+// "allowJs": Allows the use of JavaScript files alongside TypeScript files in the project. It is set to true, enabling the compiler to process both TypeScript and JavaScript code.
+// "skipLibCheck": Skips type checking for all declaration files (*.d.ts). It is set to true, which can improve compilation performance but may result in missing type errors from declaration files.
+// "strict": Enables strict type checking options in TypeScript. When set to true, it enforces stricter type rules and checks, improving code quality and reducing potential errors.
+// "forceConsistentCasingInFileNames": Requires consistent casing of file names. For example, it ensures that imports and references to files have the correct casing.
+// "noEmit": Prevents the TypeScript compiler from emitting any compiled output files. It is set to true, indicating that no JavaScript files should be generated during the compilation process.
+// "esModuleInterop": Enables compatibility with modules using the ECMAScript module system. It allows for the interoperability between CommonJS and ES modules.
+// "module": Specifies the module code generation for TypeScript. It is set to "esnext", indicating that the output code will use the ECMAScript module syntax.
+// "moduleResolution": Determines how modules are resolved in the project. "node" indicates that the Node.js module resolution algorithm will be used.
+// "resolveJsonModule": Allows TypeScript to import JSON files as modules. It is set to true, enabling the usage of import statements for JSON files.
+// "isolatedModules": Instructs TypeScript to treat each file as a separate module. This can improve build and incremental compilation performance.
+// "jsx": Specifies the JSX compilation mode. In this case, it is set to "preserve", meaning that JSX syntax will be preserved in the output code.
+// "incremental": Enables incremental compilation, which improves build performance by only recompiling modified files and their dependencies.
+// "noUncheckedIndexedAccess": Provides additional checks for indexed accesses, ensuring that they are non-null and non-undefined.
 }
+
+
+
+// 
+
+
+
+
+
+
+
+
