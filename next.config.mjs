@@ -1,4 +1,5 @@
-import { env } from "./src/server/env.mjs";
+import withNextIntl from "next-intl/plugin";
+import { env } from "./app/env.mjs";
 
 /**
  * Don't be scared of the generics here.
@@ -8,15 +9,17 @@ import { env } from "./src/server/env.mjs";
  * @param {T} config - A generic parameter that flows through to the return type
  * @constraint {{import('next').NextConfig}}
  */
-function defineNextConfig(config) {
-  console.log(env, 'env');
 
-  return config;
+function defineNextConfig(config) {
+
+  return withNextIntl('./i18n.ts')(config);
 }
 
 export default defineNextConfig({
-  reactStrictMode: true,
-  serverActions: true,
+  experimental: {
+    appDir: true,
+    serverActions: true
+  },
   images: {
     domains: ['uploadthing.com', 'lh3.googleusercontent.com', "uploadthing-prod.s3.us-west-2.amazonaws.com"],
   },

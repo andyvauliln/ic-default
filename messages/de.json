@@ -1,0 +1,26 @@
+{
+    "Index": {
+        "title": "next-translate library EN"
+    },
+    "layout": {
+        "prepare": "Prepare",
+        "copilot": "Copilot",
+        "jobs": "Jobs",
+        "cv": "CV",
+        "roadmap": "Roadmap",
+        "pricing": "Pricing",
+        "termsOfUse": "Terms of Use",
+        "privacyPolicy": "Privacy & Policy",
+        "feedback": "Feedback",
+        "support": "Support",
+        "idea": "Idea",
+        "contact": "Contact",
+        "company": "Company",
+        "about": "About",
+        "interviewCopilot": "Interview Copilot",
+        "reserved": "All right reserved",
+        "createdBy": "Created By",
+        "copyright": "Copyright © 2023 Interview Copilot",
+        "bussiness": "Bussiness"
+    }
+}

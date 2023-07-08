@@ -1,0 +1,32 @@
+import { z } from "zod";
+
+export const envSchema = z.object({
+  // Specify your environment variables schema here
+  SUPABASE_PROJECT_REF: z.string(),
+  SUPABASE_PROJECT_REF: z.string(),
+  NEXT_PUBLIC_SUPABASE_URL: z.string(),
+  NEXT_PUBLIC_SUPABASE_ANON_KEY: z.string(),
+  SUPABASE_SERVICE_ROLE_KEY: z.string(),
+  SUPABASE_JWT_TOKEN: z.string(),
+  NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: z.string(),
+  LEMONSQUEEZY_API_KEY: z.string(),
+  LEMONS_SQUEEZY_SIGNATURE_SECRET: z.string(),
+  LEMONS_SQUEEZY_PRODUCT_ID: z.string(),
+  LEMON_SQUEEZY_STORE_ID: z.string(),
+  LEMON_SQUEEZY_CHECKOUT_LINKS: z.string(),
+  LEMON_SQUEEZY_WEBHOOK_SECRET: z.string(),
+  HELIO_API_DEV: z.string(),
+  HELIO_API_PROD: z.string(),
+  HELIO_PUBLIC_API_KEY: z.string(),
+  HELIO_PRIVATE_API_KEY: z.string(),
+  NOTION_API_TOKEN: z.string(),
+  NOTION_IC_ROOT_PAGE: z.string(),
+  NOTION_IC_FEATURES_DB: z.string(),
+  UPLOADTHING_SECRET: z.string(),
+  UPLOADTHING_APP_ID: z.string(),
+  TELEGRAM_BOT_TOKEN: z.string(),
+  TELEGRAM_BOT_SECRET_HASH: z.string(),
+  AZURE_SPEACH_SERVICE_KEY_1: z.string(),
+  AZURE_SPEACH_SERVICE_KEY_2: z.string(),
+  AZURE_SPEACH_API: z.string(),
+});
