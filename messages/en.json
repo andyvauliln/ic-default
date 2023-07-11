@@ -3,7 +3,7 @@
         "title": "next-translate library EN"
     },
     "layout": {
-        "prepare": "Prepare",
+        "train": "Train",
         "copilot": "Copilot",
         "jobs": "Jobs",
         "cv": "CV",
@@ -14,7 +14,7 @@
         "feedback": "Feedback",
         "support": "Support",
         "idea": "Idea",
-        "contact": "Contacts",
+        "contact": "Contact Us",
         "company": "Company",
         "about": "About",
         "interviewCopilot": "Interview Copilot",

@@ -2,20 +2,23 @@
 * USERS
 * Note: This table contains user data. Users should only be able to view and update their own data.
 */
-create table users (
-  -- UUID from auth.users
-  id uuid references auth.users not null primary key,
-  email text,
-  full_name text,
-  avatar_url text,
-  -- The customer's billing address, stored in JSON format.
-  billing_address jsonb,
-  -- Stores your customer's payment instruments.
-  payment_method jsonb
-);
-alter table users enable row level security;
-create policy "Can view own user data." on users for select using (auth.uid() = id);
-create policy "Can update own user data." on users for update using (auth.uid() = id);
+create table
+  public.users (
+    id uuid not null,
+    full_name text null,
+    avatar_url text null,
+    billing_address jsonb null,
+    payment_method jsonb null,
+    email text null,
+    openai_api_key text null,
+    notion_root_page_id text null,
+    notion_token text null,
+    constraint users_pkey primary key (id),
+    constraint users_notion_root_page_id_key unique (notion_root_page_id),
+    constraint users_notion_token_key unique (notion_token),
+    constraint users_openai_api_key_key unique (openai_api_key),
+    constraint users_id_fkey foreign key (id) references auth.users (id)
+  ) tablespace pg_default;
 
 /**
 * This trigger automatically creates a user entry when a new user signs up via Supabase Auth.
@@ -23,7 +26,7 @@ create policy "Can update own user data." on users for update using (auth.uid() 
 create function public.handle_new_user() 
 returns trigger as $$
 begin
-  insert into public.users (id, email, full_name, avatar_url)
+  insert into public.users (id, email, full_name, avatar_url, users_notion_root_page_id_key, users_notion_token_key, users_openai_api_key_key, )
   values (new.id, new.email, new.raw_user_meta_data->>'full_name', new.raw_user_meta_data->>'avatar_url');
   return new;
 end;

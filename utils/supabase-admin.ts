@@ -105,6 +105,42 @@ const onSubscriptionCreated = async (order:Order, event:string, id:string) => {
   console.log(`Updated subscription on ${event} event for sub id [${id}]`);
 };
 
+const updateUserNotion = async (uuid, notionPageId, notionToken) => {
+  console.log(uuid, notionPageId, notionToken,'uuid, notionPageId, notionToken' );
+
+  let userUpdate: Database['public']['Tables']['users']['Update'] =
+    {
+      notion_token: notionToken,
+      notion_root_page_id: notionPageId,
+    };
+
+  const { error } = await supabaseAdmin
+    .from('users')
+    .update(userUpdate)
+    .eq('id', uuid);
+
+  if (error) throw error;
+  console.log(`Updated Notion User data`);
+};
+
+const updateUserOpenAi = async (uuid, api_key) => {
+  console.log(uuid, api_key,'uuid, api_key' );
+  
+
+  let userUpdate: Database['public']['Tables']['users']['Update'] =
+    {
+      openai_api_key: api_key
+    };
+
+  const { error } = await supabaseAdmin
+    .from('users')
+    .update(userUpdate)
+    .eq('id', uuid);
+
+  if (error) throw error;
+  console.log(`Updated Open AI User data`);
+};
+
 const onSubscriptionUpdated = async (order:Order, event:string) => {
   // Upsert the latest status of the subscription object.
   let subscriptionData: Database['public']['Tables']['subscriptions']['Update'] =
@@ -135,6 +171,8 @@ export {
   onOrderCreated,
   onSubscriptionCreated,
   onSubscriptionUpdated,
+  updateUserNotion,
+  updateUserOpenAi
 };
 
   // For a new subscription copy the billing details to the customer object.

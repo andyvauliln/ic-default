@@ -184,6 +184,9 @@ export interface Database {
           email: string | null
           full_name: string | null
           id: string
+          notion_root_page_id: string | null
+          notion_token: string | null
+          openai_api_key: string | null
           payment_method: Json | null
         }
         Insert: {
@@ -192,6 +195,9 @@ export interface Database {
           email?: string | null
           full_name?: string | null
           id: string
+          notion_root_page_id?: string | null
+          notion_token?: string | null
+          openai_api_key?: string | null
           payment_method?: Json | null
         }
         Update: {
@@ -200,6 +206,9 @@ export interface Database {
           email?: string | null
           full_name?: string | null
           id?: string
+          notion_root_page_id?: string | null
+          notion_token?: string | null
+          openai_api_key?: string | null
           payment_method?: Json | null
         }
         Relationships: [

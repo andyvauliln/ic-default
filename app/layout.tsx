@@ -1,43 +1,50 @@
-import { notFound } from 'next/navigation';
-
+import Providers from '@/components/Providers';
+import Footer from '@/components/footer';
+import Header from '@/components/header';
 import '@/styles/globals.css';
+import { Analytics } from '@vercel/analytics/react';
+
+import { getSession, } from '@/app/supabase-server';
+import { notFound } from 'next/navigation';
 import { ReactNode } from 'react';
+import { Toaster } from 'sonner';
+import metadata from './metadata';
+export const dynamic = 'force-dynamic'
 
-const meta = {
-    title: 'Interviews Copilot',
-    description: 'Helps prepare to interview, find job and provide ai answeres to interview questions in realtime call',
-    cardImage: '/og.png',
-    robots: 'follow, index',
-    favicon: '/favicon.ico',
-    url: 'https://interviewscopilot-andyvauliln.vercel.app',
-    type: 'website'
-};
+export default async function LocaleLayout({
+    children,
+    params: { locale = 'en' },
+}: LocaleLayoutProps) {
+    const session = await getSession();
+    let messages;
+    try {
+        messages = (await import(`../messages/${locale}.json`)).default;
 
-export const metadata = {
-    metadataBase: new URL(meta.url),
-    title: meta.title,
-    description: meta.description,
-    cardImage: meta.cardImage,
-    robots: meta.robots,
-    favicon: meta.favicon,
-    url: meta.url,
-    type: meta.type,
-    openGraph: {
-        url: meta.url,
-        title: meta.title,
-        description: meta.description,
-        cardImage: meta.cardImage,
-        type: meta.type,
-        site_name: meta.title
-    },
-    twitter: {
-        card: 'summary_large_image',
-        site: '@interviews_copilot',
-        title: meta.title,
-        description: meta.description,
-        cardImage: meta.cardImage
+    } catch (error) {
+        console.log(error);
+
     }
-};
+
+    return (
+        <html lang={locale}>
+            <body className='dark-mode'>
+                <Providers locale={locale} messages={messages}>
+                    <Header session={session} />
+                    <main
+                        className="min-h-[100dvh]"
+                    >
+                        {children}
+                        <Analytics />
+                    </main>
+                    <Footer />
+                </Providers>
+                <Toaster />
+            </body>
+        </html>
+    );
+}
+
+export { metadata };
 
 type LocaleLayoutProps = {
     children: ReactNode;
@@ -45,22 +52,3 @@ type LocaleLayoutProps = {
         locale?: string;
     };
 };
-
-export default async function LocaleLayout({
-    children,
-    params: { locale = 'en' },
-}: LocaleLayoutProps) {
-
-
-    return (
-        <html lang={locale}>
-            <body>
-                <main
-                    className="min-h-[100dvh]"
-                >
-                    {children}
-                </main>
-            </body>
-        </html>
-    );
-}

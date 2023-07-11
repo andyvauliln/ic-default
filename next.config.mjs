@@ -20,6 +20,13 @@ export default defineNextConfig({
     appDir: true,
     serverActions: true
   },
+  // supabase: {
+  //   client: {
+  //     auth: {
+  //       persistSession: false //or true
+  //     }
+  //   }
+  // },
   images: {
     domains: ['uploadthing.com', 'lh3.googleusercontent.com', "uploadthing-prod.s3.us-west-2.amazonaws.com"],
   },

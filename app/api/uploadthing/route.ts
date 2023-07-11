@@ -21,7 +21,6 @@ const ourFileRouter = {
 export type OurFileRouter = typeof ourFileRouter;
 
 // Export routes for Next App Router
-
 export const { GET, POST } = createNextRouteHandler({
   router: ourFileRouter
 });

@@ -41,7 +41,7 @@
     "**/*.tsx",
     "**/*.js",
     ".next/types/**/*.ts"
-  ],
+, "app/api/notion/features/update-page/route.jsx"  ],
   "exclude": [
     "node_modules"
   ]
