@@ -42,9 +42,7 @@
     "**/*.js",
     ".next/types/**/*.ts"
 , "app/api/notion/features/update-page/route.jsx"  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules", "server", "env"]
   //"target": Specifies the ECMAScript version to which the TypeScript code will be compiled. In this case, it is set to "es5", meaning the code will be transpiled to ECMAScript 5 syntax.
   // "lib": Defines the library files that are available to the TypeScript compiler. It includes the "dom", "dom.iterable", and "esnext" libraries in this case.
   // "allowJs": Allows the use of JavaScript files alongside TypeScript files in the project. It is set to true, enabling the compiler to process both TypeScript and JavaScript code.

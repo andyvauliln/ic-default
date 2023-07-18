@@ -32,10 +32,11 @@ export const LocaleSelector = () => {
     >
       <div className="relative mr-1.5 h-3.5 w-3.5 md:h-[17px] md:w-[17px]">
         <Image
-          priority
+          priority={true}
           src={`/assets/${currentLocale}-flag.svg`}
           alt={`${currentLocale} locale`}
-          fill
+          width={17}
+          height={17}
         />
       </div>
       <span>{currentLocale.toUpperCase()}</span>
@@ -70,7 +71,7 @@ export const LocaleSelector = () => {
                 }
               >
                 <Image
-                  priority
+                  priority={true}
                   src={flagURL}
                   alt={`${locale} locale`}
                   width={17}

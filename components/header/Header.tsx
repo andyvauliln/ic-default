@@ -24,7 +24,8 @@ export const navLinks: NavLink[] = [
   { name: 'train', href: '/train' },
   { name: 'copilot', href: '/copilot' },
   { name: 'jobs', href: '/jobs' },
-  { name: 'cv', href: '/cv' },
+  { name: 'workflows', href: '/workflows' },
+  { name: 'build', href: '/build' },
 ];
 
 interface Props {

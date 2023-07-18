@@ -4,11 +4,8 @@ const plugin = require('tailwindcss/plugin')
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    'app/**/*.{ts,tsx}',
-    'components/**/*.{ts,tsx}',
-    'pages/**/*.{ts,tsx}',
-    'api/**/*.{ts,tsx}',
-    'src/**/*.{ts,tsx}',
+    'app/**/*.{jsx,tsx}',
+    'components/**/*.{jsx,tsx}',
   ],
   theme: {
     extend: {
@@ -22,6 +19,7 @@ module.exports = {
       },
       boxShadow: {
         allSides: '0 0 10px rgba(0,0,0,0.6);',
+        allSidesSm: '0 0 6px rgba(0,0,0,0.6);',
         bottom: '0px 15px 10px -15px rgba(0,0,0,0.6);',
         top: '0px -15px 10px -15px rgba(0,0,0,0.6);',
         topLong: "0px -59px 92px 15px var(--color-purple-600)",

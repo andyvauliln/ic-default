@@ -1,0 +1,17 @@
+[
+    {
+        "workflow_id": "12344-12414-14124-14244",
+        "worflow_name": "",
+        "task_prompt": "",
+        "building_plan": "",
+        "type": "public", //sell//private//public//stuck
+        "owner": "jameer",
+        "tags": [
+            "productivity",
+            "job-interview"
+        ],
+        "building_model": "gpt-4",
+        "building_plan_promt": "",
+        "plan_to_task_prompt": "",
+    }
+]

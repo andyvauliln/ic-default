@@ -1,0 +1,23 @@
+[
+    {
+        "id": "12344-12414-14124-14244",
+        "name": "",
+        "nodes": [
+            "telegram",
+            "notion",
+            "AI",
+            "WebSearch"
+        ],
+        "prompt": "",
+        "building_plan": "",
+        "type": "public", //sell//private//public//stuck
+        "owner": "jameer",
+        "price": "15$",
+        "addedCount": 123,
+        "tags": [
+            "productivity",
+            "job interview"
+        ],
+        "stars": 134,
+    }
+]

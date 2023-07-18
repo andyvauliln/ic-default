@@ -20,6 +20,23 @@ export default defineNextConfig({
     appDir: true,
     serverActions: true
   },
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          {
+            key: "Cross-Origin-Embedder-Policy",
+            value: "require-corp",
+          },
+          {
+            key: "Cross-Origin-Opener-Policy",
+            value: "same-origin",
+          },
+        ],
+      },
+    ];
+  },
   // supabase: {
   //   client: {
   //     auth: {
@@ -27,6 +44,21 @@ export default defineNextConfig({
   //     }
   //   }
   // },
+  async redirects() {
+    return [
+      {
+        source: '/train',
+        destination: '/train/dashboard',
+        permanent: true,
+      },
+      {
+        source: '/build',
+        destination: '/build/task',
+        permanent: true,
+      },
+
+    ]
+  },
   images: {
     domains: ['uploadthing.com', 'lh3.googleusercontent.com', "uploadthing-prod.s3.us-west-2.amazonaws.com"],
   },

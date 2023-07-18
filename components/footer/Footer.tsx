@@ -31,15 +31,15 @@ export default function Footer() {
         [t('privacyPolicy'), '/privacy-policy'],
       ],
     },
-    {
-      label: t('contact'),
-      links: [
-        [t('feedback'), '/roadmap'],
-        [t('support'), '/roadmap'],
-        [t('idea'), '/roadmap'],
-        [t('bussiness'), '/roadmap'],
-      ],
-    },
+    // {
+    //   label: t('contact'),
+    //   links: [
+    //     [t('feedback'), '/roadmap'],
+    //     [t('support'), '/roadmap'],
+    //     [t('idea'), '/roadmap'],
+    //     [t('bussiness'), '/roadmap'],
+    //   ],
+    // },
     {
       label: t('contact'),
       links: [
